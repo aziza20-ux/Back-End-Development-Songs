@@ -74,8 +74,8 @@ def create_song():
     song = request.json
     cursor = db.songs.find({})
     for doc in cursor:
-        if doc['id'] == song['id']
-        return {"Message":f"song with id {song['id']} already present"},302
+        if doc['id'] == song['id']:
+            return {"Message":f"song with id {song['id']} already present"},302
     insert = db.songs.insert_one(song)
     inserted_id = insert.inserte_id
     return parse_json(inserted_id),200
